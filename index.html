@@ -162,7 +162,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Identifying important neurons for final predictions is essential for understanding the mechanisms of large language models. Due to computational constraints, current attribution techniques struggle to operate at neuron level. In this paper, we propose a static method for pinpointing significant neurons. Compared to seven other methods, our approach demonstrates superior performance across three metrics. Additionally, since most static methods typically only identify "value neurons" directly contributing to the final prediction, we propose a method for identifying "query neurons" which activate these "value neurons". Finally, we apply our methods to analyze six types of knowledge across both attention and feed-forward network (FFN) layers. Our method and analysis are helpful for understanding the mechanisms of knowledge storage and set the stage for future research in knowledge editing.
+            Identifying important neurons for final predictions is essential for understanding the mechanisms of 
+            large language models. Due to computational constraints, current attribution techniques struggle to 
+            operate at neuron level. In this paper, we propose a static method for pinpointing significant neurons. 
+            Compared to seven other methods, our approach demonstrates superior performance across three metrics. 
+            Additionally, since most static methods typically only identify "value neurons" directly contributing to 
+            the final prediction, we propose a method for identifying "query neurons" which activate these 
+            "value neurons". Finally, we apply our methods to analyze six types of knowledge across both attention
+            and feed-forward network (FFN) layers. Our method and analysis are helpful for understanding the mechanisms
+            of knowledge storage and set the stage for future research in knowledge editing.
           </p>
         </div>
       </div>
@@ -190,23 +198,22 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Introduction</h2>
-        <!-- Interpolating. -->
-        <h3 class="title is-4"></h3>
         <div class="content has-text-justified">
           <p>
-            1
+            Identifying the important neurons in LLMs is significant for understanding the mechanisms. 
+            Traditional attribution methods such as integrated gradients and causal mediation analysis 
+            are hard to be utilized at neuron level due to the computational cost. In this paper, we first
+            compute the log probability increase of each neuron to locate the "value neurons" in deep FFN layers
+            and deep attention layers. 
           </p>
         </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-centered has-text-centered">
-            <img src="./static/images/neuron-mechanism.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Neuron-Level Information Flow</p>
-          </div>
+        <div class="column is-centered has-text-centered">
+          <img src="./static/images/neuron-mechanism.jpg"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+          <p>Neuron-Level Information Flow</p>
         </div>
         <br/>
-        <!--/ Introduction. -->
       </div>
     </div>
     <!--/ Introduction. -->
@@ -227,9 +234,7 @@
   
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
     <!-- Acknowledgements -->
-    <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Acknowledgements</h2>
         <div class="content has-text-justified">
@@ -238,8 +243,6 @@
           </p>
         </div>
         <br/>
-      </div>
-    </div>
     <!--/ Acknowledgements -->
   </div>
 </section>
