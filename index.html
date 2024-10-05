@@ -209,22 +209,22 @@
           <p>
             In LLMs, there are "value neurons" contributing to the final prediction directly, as they contain 
             the important information about the final prediction. There are also "query neurons" contributing 
-            by activating the "value neurons". In this paper, we first compute the log probability increase of 
-            each neuron to locate the "value neurons" in deep FFN layers and deep attention layers. 
-            Then we calculate the inner product between the attention "value neurons" and each shallow FFN neuron 
-            to locate the "query neurons" in shallow FFN layers.
+            by activating the "value neurons". The "query neurons" may not contain information about the final prediction. 
+            In this paper, we first compute the log probability increase of each neuron to locate the "value neurons" 
+            in deep FFN layers and deep attention layers. Then we calculate the inner product between the attention 
+            "value neurons" and each shallow FFN neuron to locate the "query neurons" in shallow FFN layers.
           </p>
           <p>
-            When intervening the top200 attention "value neurons" and top100 FFN "value neurons" for each sentence, the
+            When intervening the top200 "attention value neurons" and top100 "FFN value neurons" for each sentence, the
             MRR and probability decreases 96.3%/99.2% in GPT2, and 96.9%/99.6% in Llama. When intervening top1000 
             shallow neurons for each sentence, both MRR and probability drops very much (92%/95% in GPT2 and 87%/95% in
-            Llama). These results prove that our method can identify the important neurons.
+            Llama). These results prove that our method can identify the important neurons for the final prediction.
           </p>
           <p>
             The neuron-level information flow is shown in the figure below. The "query FFN neurons" in shallow layers
-            are activated and added into each token's residual stream. Then these "query neurons" activate the
+            are activated and added into each position's residual stream. Then these "query neurons" activate the
             "attention value neurons" in deep attention layers and transform into the last token, then activate 
-            the "FFN value neurons" in deep FFN layers.
+            the "FFN value neurons" in deep FFN layers. 
           </p>
         </div>
         <div class="column is-centered has-text-centered">
