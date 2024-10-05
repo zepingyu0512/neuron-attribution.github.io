@@ -258,19 +258,26 @@
             The case is: ['{start}', 'Tim', 'Dun', 'can', 'plays', 'the', 'sport', 'of'] => "basketball"
           </p>
           <p>  
-            Firstly, the 3rd position ("can") activates the query FFN neuron FFN_5_5005 (layer 5, neuron 5005). It is very possible
-            that in early attention layers position 3 ("can") has captured the features from position 1 ("Tim") and position 2
-            ("Dun"), but we do not verify this in our paper. The top tokens of FFN_5_5005 (hidden-interpretable) is ['basketball', 'Basketball', 'NBA', 'Jazz', 'asketball', 'jazz', 'Bird', 'basket', 'court', 'courts'].
+            Firstly, the 3rd position ("can") activates the query FFN neuron FFN_5_5005 (layer 5, neuron 5005). 
+            The top tokens of FFN_5_5005 (hidden-interpretable) is 
+            ['basketball', 'Basketball', 'NBA', 'Jazz', 'asketball', 'jazz', 'Bird', 'basket', 'court', 'courts'].
+          </p>
+          <p>  
+            It is very possible that in early attention layers position 3 ("can") has captured the features from 
+            position 1 ("Tim") and position 2 ("Dun"), but we do not verify this in our paper. 
           </p>
           <p>    
-            Many query neurons like FFN_5_5005 are activated. Then these neurons activate many value attention neurons like 
-            ATTN_15_15_112 (layer 15, head 15, neuron 112), whose top tokens in unembedding space is ['basketball', 'Basketball', 'asketball', 'NBA', 'basket', '球', 'Mount', 'hos', 'wings', 'ugby'].
+            Secondly, many query neurons like FFN_5_5005 are activated. Then these neurons activate many value attention neurons like 
+            ATTN_15_15_112 (layer 15, head 15, neuron 112), whose top tokens in unembedding space is 
+            ['basketball', 'Basketball', 'asketball', 'NBA', 'basket', '球', 'Mount', 'hos', 'wings', 'ugby'].
+            The identified attention value neurons work both as "value" and "query".
           </p>
           <p> 
-            The identified attention value neurons work both as "value" and "query". At last, these attention neurons activate 
-            the FFN value neurons such as FFN_22_1674: ['Jazz', 'jazz', 'basketball', 'rock', 'Basketball', 'Rock', 'hockey', 'Hockey', 'Pop', 'rugby'].
-            Obviously, this FFN neuron is a polysemantic neuron, which is also related to "music" (see "jazz" and "rock"). Although the
-            superposition phenomenon exists, our method can successfully identify it. 
+            Lastly, these attention neurons activate 
+            the FFN value neurons such as FFN_22_1674: 
+            ['Jazz', 'jazz', 'basketball', 'rock', 'Basketball', 'Rock', 'hockey', 'Hockey', 'Pop', 'rugby'].
+            Obviously, this FFN neuron is a polysemantic neuron, which is also related to "music" (see "jazz" and "rock"). 
+            Although the superposition phenomenon exists, our method can successfully identify it. 
           </p>
           <p> 
             To test more cases, please use our code: 
